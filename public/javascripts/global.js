@@ -6,7 +6,7 @@ $(document).ready(function() {
     populateTable();
 
     $('#documentList table tbody').on('click', 'td a.linkshowrecipedetails', showRecipeDetails);
-    
+
     $('#btnAddRecipe').on('click', addRecipe);
 
     $('#documentList table tbody').on('click', 'td a.linkdeleterecipe', deleteRecipe);
@@ -45,7 +45,7 @@ function showRecipeDetails(event) {
 
     var thisRecipeName = $(this).attr('rel');
 
-    var arrayPosition = documentListData.map(function(arrayItem) { 
+    var arrayPosition = documentListData.map(function(arrayItem) {
         return arrayItem.recipeName;
     }).indexOf(thisRecipeName);
 
@@ -73,7 +73,7 @@ function searchHttp(event) {
         });
         $('.searchList table tbody').html(tableContent);
     });
-    
+
     $.getJSON( '/documents/recipesearch/' + query, function( data ) {
         $.each(data.parsed, function() {
             tableContent += '<tr>';

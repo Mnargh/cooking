@@ -33,4 +33,25 @@ describe('Cooking homepage', () => {
         RecipeStore.register.click();
         expect(browser.getUrl()).to.contain('/register');
     });
-});
+
+    it('should navigate to back to search page', () => {
+        RecipeStore.backToSearch.moveToObject();
+        RecipeStore.backToSearch.waitForVisible();
+        RecipeStore.backToSearch.click();
+        expect(browser.getUrl()).to.equal('http://localhost:3000/');
+    });
+
+    // it('should have the correct placholder text', () => {
+    //   RecipeStore.getElementById('#inputRecipeName')
+    //   expect(RecipeStore.inputRecipeName).toEqual('Recipe name');
+    // });
+    //
+    // it('should show error message when required fields are not filled in', () => {
+    //   //RecipeStore.inputRecipeName.setValue('#inputRecipeName' 'HotPot');
+    //   RecipeStore.inputRecipeName.moveToObject();
+    //   browser.setValue('#inputRecipeName', 'hotpot');
+    //   RecipeStore.addRecipe.click();
+    //   expect(RecipeStore.errorMsgs.isVisible()).to.be.true;
+    // });
+
+  });
