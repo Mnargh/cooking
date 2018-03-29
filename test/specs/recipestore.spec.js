@@ -2,7 +2,7 @@ import RecipeStore from '../page-objects/recipeStore.page';
 
 describe('Cooking homepage', () => {
 
-    before('Navigate to Homepage', () => {
+    before('Navigate to Recipe store page', () => {
         browser.url('/recipeStore');
     });
 
