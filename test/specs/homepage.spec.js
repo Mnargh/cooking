@@ -33,4 +33,5 @@ describe('Cooking homepage', () => {
         HomePage.register.click();
         expect(browser.getUrl()).to.contain('/register');
     });
+
 });
